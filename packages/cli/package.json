@@ -1,0 +1,36 @@
+{
+  "name": "@agentcrash/cli",
+  "version": "0.0.0",
+  "private": true,
+  "description": "AgentCrash command-line interface.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "bin": {
+    "agentcrash": "./bin/run.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "bin",
+    "dist",
+    "oclif.manifest.json"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "clean": "rm -rf dist .turbo *.tsbuildinfo",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "lint": "echo 'lint: placeholder'"
+  },
+  "dependencies": {
+    "@agentcrash/core": "workspace:*",
+    "@agentcrash/dsl": "workspace:*",
+    "@oclif/core": "^4.0.0"
+  },
+  "oclif": {
+    "bin": "agentcrash",
+    "dirname": "agentcrash",
+    "commands": "./dist/commands",
+    "topicSeparator": " "
+  }
+}

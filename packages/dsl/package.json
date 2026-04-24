@@ -1,0 +1,29 @@
+{
+  "name": "@agentcrash/dsl",
+  "version": "0.0.0",
+  "private": true,
+  "description": "YAML scenario DSL: schema, validator, and types.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "clean": "rm -rf dist .turbo *.tsbuildinfo",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "lint": "echo 'lint: placeholder'"
+  },
+  "dependencies": {
+    "@agentcrash/core": "workspace:*",
+    "ajv": "^8.17.0",
+    "ajv-formats": "^3.0.1",
+    "yaml": "^2.5.0"
+  }
+}
